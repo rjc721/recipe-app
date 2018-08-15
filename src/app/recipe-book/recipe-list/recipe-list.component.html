@@ -1,1 +1,16 @@
-<app-recipe-item></app-recipe-item>
+<button type="button" class="btn btn-success" name="button">
+  New Recipe
+</button>
+<hr>
+<div class="list-group">
+  <a *ngFor="let recipe of recipes; let i = index" href="#" class="list-group-item list-group-item-action align-items-start clearfix" [ngClass]="{active: i === 0}">
+    <div class="float-left">
+      <h4>{{ recipe.name }}</h4>
+      <p>{{ recipe.description }}</p>
+    </div>
+    <span class="float-right">
+      <img [src]="recipe.imagePath" class="img-responsive" style="max-height: 50px;" alt="">
+    </span>
+  </a>
+  <app-recipe-item></app-recipe-item>
+</div>
